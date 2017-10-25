@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Minecraft Logic Circuits! - Fall 2017 - COMP-273 - Intro to Computer Systems</title>
+  </head>
+
+  <body>
+    <h1>Minecraft Logic Circuits!</h1>
+    Gabriel Downs September 20, 2017
+
+    <p>Hey, so as Prof. Siddiqi mentioned in class today, you can build all of the digital circuits we learned in class using redstone in minecraft! Below are some screenshots of simple gates and circuits I made.</p>
+    <p>The red dust acts as a wire, and the red torches can be used as negators. All the basic gates can be derived from these:</p>
+    <p><img src="/images/minecraft/basic_gates.png" alt="Basic Logic Gates" title="Basic Logic Gates" style="max-width: 100%;"/></p>
+
+    <p>(Left to Right) A, -A, A or B, A and B</p>
+    <br>
+    <p>Note there is no inherent AND gate, but it is made from NOT's and OR's</p>
+    <p>The AND gate pictured is actually: -( ((-A) + (-B) )</p>
+    <p>Distributing the NOTs and ORs by de MOrgan's Laws shows this is equivalent to A*B.</p>
+    <br>
+    <p>From this we can derive a nice XOR gate:</p>
+    <p><img src="/images/minecraft/XOR.png" alt="XOR Gate" title="XOR Gate" style="max-width: 100%;"/></p>
+    <p>Note again this uses a slightly more complicated structure than the XOR gate we described in class. Since AND gates are more difficult to construct this version tries to make use of ORs and NOTs.</p>
+    <p>The gate above can be given by: -( (A*B) + (-A) ) + -( (A*B) + (-B) )</p>
+    <p>So we onlyhave to use 1 AND gabe and, after distributing, we see this is equal to ( (-A) * B ) + ( (A) * (-B) )</p>
+    <br>
+    <p>We can use the XOR gate plus the AND to construct nice Half and Full Adders:</p>
+    <p><img src="/images/minecraft/half_adder.png" alt="Half Adder" title="Half Adder" style="max-width: 100%;"/></p>
+    <p>The input is a the bottom: (Left to Right) A, B</p>
+    <p>And output on top: (Left to Right) C, S</p>
+    <br>
+    <p>We can chain these together to form a full 2-bit Adder!</p>
+    <p><img src="/images/minecraft/two_bit_adder.png" alt="2-Bit Adder" title="2-Bit Adder" style="max-width: 100%;"></p>
+    <p>Again the Input is at the bottom: (Left to Right) A1, B1, A0, B0</p>
+    <p>And the output is at the top: (Left to Right) extra carry, S1, S0</p>
+    <p>We can see C1 (the first carry) rippling through from one adder to the next in the middle of the circuit.</p>
+    <p>Note the addition in the screenshot is: 01 + 01 = 10</p>
+    <br>
+    <p>A view of the Adder from the side shows the XOR gates chaining together:</p>
+    <p><img src="/images/minecraft/side_two_bit_adder.png" alt="Adder Side View" title="Adder Side View" style="max-width: 100%;"/></p>
+    <br>
+    <p>Finally we can make an SR-Latch:</p>
+    <p><img src="/images/minecraft/SR_latch.png" alt="SR Latch" title="SR Latch" style="max-width: 100%;"/></p>
+    <p>This also appears a bit different from the latch we described in class, but the behavior is the same.</p>
+    <br>
+    <p>Note much of this is not my own original work, you can find very elegant circuits people have designed at sites like <a href="https://minecraft.gamepedia.com/Tutorials/Basic_logic_gates">https://minecraft.gamepedia.com/Tutorials/Basic_logic_gates</a></p>
+    <br>
+    <p>People have use this type of circuitry to make working computer components like the registers we talked about in class.</p>
+    <p>Combine with a few mods, some have even made fully function video games, like this incredible working <a href="https://gfycat.com/DisloyalImperturbableGraywolf">pokemon clone</a>.</p>
+    <br>
+    <p>- Gabriel Downs</p>
+  </body>
+</html>
